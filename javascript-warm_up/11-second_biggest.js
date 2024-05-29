@@ -8,7 +8,6 @@ let values = [];
 
 if(argvSize <=1){
     console.log(0);
-    return;
 }
 
 for (let i = 0; i < argvSize; i++) {
