@@ -1,17 +1,16 @@
 #!/usr/bin/node
-const { argv } = require("node:process");
+const { argv } = require('node:process');
 
-let argvSize = argv.length - 2;
+const argvSize = argv.length - 2;
 
-let values = [];
+const values = [];
 
-
-if(argvSize <=1){
-    console.log(0);
+if (argvSize <= 1) {
+  console.log(0);
 }
 
 for (let i = 0; i < argvSize; i++) {
-  values.push(argv[i +2]);
+  values.push(argv[i + 2]);
 }
 
 const sortedValues = values.sort((a, b) => a - b);
