@@ -1,19 +1,17 @@
 #!/usr/bin/node
 const { argv } = require("node:process");
 
-let argvSize = argv.length - 2;
+let secondLargest = -Infinity;
+let largest = -Infinity;
 
-let values = [];
-
-
-if(argvSize <=1){
-    console.log(0);
+for (let i = 2; i < argv.length; i++) {
+    const num = parseFloat(argv[i]);
+    if (num > largest) {
+        secondLargest = largest;
+        largest = num;
+    } else if (num > secondLargest && num !== largest) {
+        secondLargest = num;
+    }
 }
 
-for (let i = 0; i < argvSize; i++) {
-  values.push(argv[i +2]);
-}
-
-const sortedValues = values.sort((a, b) => a - b);
-
-console.log(sortedValues[sortedValues.length - 2]);
+console.log(secondLargest !== -Infinity ? secondLargest : 0);
